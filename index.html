@@ -103,7 +103,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 50px;
+            padding: 40px 50px;
             z-index: 10;
         }
 
@@ -176,7 +176,7 @@
         }
 
         .slide-body-text {
-            font-size: 21px;
+            font-size: 19px;
             color: #ffffff;
             line-height: 1.5;
             margin-bottom: 25px;
@@ -196,8 +196,8 @@
             border-radius: 50%;
             border: 3px solid var(--premium-mint);
             box-shadow: 0 0 25px rgba(0, 245, 155, 0.4);
-            overflow: hidden;   /* FIXED: Clips images inside container radius */
-            display: flex;       /* FIXED: Centers inner image layout */
+            overflow: hidden;
+            display: flex;
             justify-content: center;
             align-items: center;
             transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), 
@@ -209,9 +209,9 @@
         }
 
         .bubble img {
-            width: 100%;        /* FIXED: Forces frame coverage */
-            height: 100%;       /* FIXED: Forces frame coverage */
-            object-fit: cover;  /* FIXED: Resizes without stretching or warping */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             object-position: center;
             border-radius: 50%;
             filter: grayscale(10%) brightness(95%);
@@ -460,14 +460,14 @@
         .fin-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 12px;
             width: 100%;
         }
 
         .fin-item {
             background: rgba(255, 255, 255, 0.02);
             border-left: 4px solid var(--accent-blue);
-            padding: 12px 18px;
+            padding: 10px 15px;
             border-radius: 0 12px 12px 0;
             display: flex;
             justify-content: space-between;
@@ -478,16 +478,19 @@
         .fin-item.negative { border-left-color: #ef4444; }
 
         .fin-item h4 {
-            font-size: 15px;
+            font-size: 13.5px;
             color: #ffffff;
             font-weight: 600;
+            max-width: 78%;
+            line-height: 1.4;
         }
 
         .fin-item .value {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             color: #fff;
+            white-space: nowrap;
         }
 
         .fin-item.positive .value { color: var(--premium-mint); }
@@ -498,13 +501,13 @@
             background: linear-gradient(135deg, rgba(6, 78, 59, 0.3) 0%, rgba(2, 44, 34, 0.3) 100%);
             border: 1px solid var(--premium-mint);
             border-radius: 16px;
-            padding: 15px;
+            padding: 12px;
             text-align: center;
         }
 
         .net-yield-box h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 32px;
+            font-size: 28px;
             color: var(--premium-mint);
             font-weight: 800;
         }
@@ -513,12 +516,12 @@
         .matrix-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 12px;
+            font-size: 13px;
             margin-top: 10px;
         }
 
         .matrix-table th, .matrix-table td {
-            padding: 10px;
+            padding: 12px;
             text-align: left;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
@@ -530,7 +533,7 @@
         }
 
         .matrix-table td i {
-            font-size: 14px;
+            font-size: 15px;
         }
 
         .matrix-table td .fa-check { color: var(--premium-mint); }
@@ -590,6 +593,67 @@
         .ring-sam .ring-label { top: 10px; }
         .ring-som .ring-label { top: 38px; left: 0; width: 100%; }
 
+        /* TEAM CARDS CONTAINER (COVER SLIDE) */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            width: 90%;
+            margin-top: 20px;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            border-color: var(--premium-mint);
+            transform: translateY(-8px);
+            background: rgba(16, 185, 129, 0.05);
+            box-shadow: 0 15px 30px rgba(0, 245, 155, 0.1);
+        }
+
+        .team-img-frame {
+            width: 150px;       /* Made bigger: 150px (formerly 110px) */
+            height: 190px;      /* Made bigger portrait rectangle: 190px (formerly 110px) */
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 12px;
+            background: #111827;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .team-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 3px;
+        }
+
+        .team-role {
+            font-size: 11px;
+            color: var(--premium-mint);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         /* BOTTOM NAVBAR */
         .bottom-navbar {
             background: rgba(4, 7, 13, 0.95);
@@ -642,6 +706,46 @@
             background: var(--premium-mint);
             width: 24px;
             border-radius: 10px;
+        }
+
+        /* RESOURCES GRID */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .resource-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 15px;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .resource-card i {
+            font-size: 20px;
+            color: var(--premium-mint);
+            background: rgba(0, 245, 155, 0.08);
+            padding: 10px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 245, 155, 0.15);
+        }
+
+        .resource-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .resource-card p {
+            font-size: 11px;
+            color: var(--text-secondary);
+            line-height: 1.4;
         }
 
         /* PRESENTER NOTES PANEL */
@@ -772,15 +876,37 @@
 
     <div class="presentation-container">
 
-        <!-- SLIDE 1: COVER SLIDE -->
+        <!-- SLIDE 1: COVER SLIDE WITH TEAM MEMBERS -->
         <div class="slide active" id="s1">
             <div class="slide-layout" style="grid-template-columns: 1fr;">
-                <div class="slide-info" style="align-items: center; text-align: center; justify-content: center; height: 100%;">
-                    <span class="speaker-tag" style="margin-bottom: 15px;">Yassin</span>
-                    <h1 style="font-family: 'Space Grotesk', sans-serif; font-size: 110px; font-weight: 800; letter-spacing: -4px; line-height: 1; color: #fff;">FL<span>Y</span>NT</h1>
-                    <p style="font-size: 30px; color: #ffffff; max-width: 650px; line-height: 1.5; margin-top: 15px;">Rewiring Aviation Loyalty through Behavioral Sustainability</p>
-                    <div style="margin-top: 40px; font-size: 14px; text-transform: uppercase; letter-spacing: 3px; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; width: 40%;">
-                        Yassin &bull; Kenzy &bull; Hamza
+                <div class="slide-info" style="align-items: center; text-align: center; justify-content: center; height: 100%; padding: 20px;">
+                    <span class="speaker-tag" style="margin-bottom: 8px;">Yassin</span>
+                    <h1 style="font-family: 'Space Grotesk', sans-serif; font-size: 75px; font-weight: 800; letter-spacing: -3px; line-height: 1; color: #fff; margin-bottom: 5px;">FL<span>Y</span>NT</h1>
+                    <p style="font-size: 18px; color: #ffffff; max-width: 650px; line-height: 1.4; margin-bottom: 15px;">Rewiring Aviation Loyalty through Behavioral Sustainability</p>
+                    
+                    <!-- Team Members Presentation Cards with bigger portrait frames -->
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <div class="team-img-frame">
+                                <img src="yassin portofolio.jpeg" alt="Yassin" onerror="this.src='https://placehold.co/150x190/10151e/00f59b?text=Yassin'">
+                            </div>
+                            <div class="team-name">Yassin</div>
+                            <div class="team-role">Strategy &amp; Pitch</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-img-frame">
+                                <img src="kenzy portofolio.jpeg" alt="Kenzy" onerror="this.src='https://placehold.co/150x190/10151e/0ea5e9?text=Kenzy'">
+                            </div>
+                            <div class="team-name">Kenzy</div>
+                            <div class="team-role">Behavioral Architecture</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-img-frame">
+                                <img src="hamza portofolio.jpeg" alt="Hamza" onerror="this.src='https://placehold.co/150x190/10151e/00f59b?text=Hamza'">
+                            </div>
+                            <div class="team-name">Hamza</div>
+                            <div class="team-role">Financial Ledgers</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -791,7 +917,7 @@
             <div class="slide-layout" style="grid-template-columns: 1fr; position: relative;">
                 <div class="slide-info" style="position: absolute; top: 0; left: 0; width: 100%; height: auto; padding: 40px 50px; flex-direction: row; justify-content: space-between; align-items: center; z-index: 10;">
                     <div class="slide-header" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
-                        <span class="slide-num">Slide 2 / 9</span>
+                        <span class="slide-num">Slide 2 / 10</span>
                         <span class="speaker-tag">Yassin</span>
                     </div>
                 </div>
@@ -822,7 +948,7 @@
             <div class="slide-layout">
                 <div class="slide-info">
                     <div class="slide-header">
-                        <span class="slide-num">Slide 3 / 9</span>
+                        <span class="slide-num">Slide 3 / 10</span>
                         <span class="speaker-tag">Yassin</span>
                     </div>
                     <div>
@@ -875,7 +1001,7 @@
             <div class="slide-layout">
                 <div class="slide-info">
                     <div class="slide-header">
-                        <span class="slide-num">Slide 4 / 9</span>
+                        <span class="slide-num">Slide 4 / 10</span>
                         <span class="speaker-tag">Kenzy</span>
                     </div>
                     <div>
@@ -885,7 +1011,7 @@
                             <div class="wallet-card green-token">
                                 <i class="fa-solid fa-leaf"></i>
                                 <h4>Green Points</h4>
-                                <p style="font-size: 11px;">Spend at the Sponsor Marketplace for premium retail & brand discount codes.</p>
+                                <p style="font-size: 11px;">Spend at the Sponsor Marketplace for premium retail &amp; brand discount codes.</p>
                             </div>
                             <div class="wallet-card streak-token">
                                 <i class="fa-solid fa-fire"></i>
@@ -903,7 +1029,7 @@
                                 <span>FLYNT Wallet</span>
                             </div>
                             <div style="text-align: center; margin-bottom: 10px;">
-                                <span style="font-size: 10px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Sponsor Wallet & Streak</span>
+                                <span style="font-size: 10px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Sponsor Wallet &amp; Streak</span>
                             </div>
                             <div class="phone-body">
                                 <div class="phone-card">
@@ -930,54 +1056,12 @@
             </div>
         </div>
 
-        <!-- SLIDE 5: MASTER NUMBERS -->
+        <!-- SLIDE 5: VALUE PROPOSITION -->
         <div class="slide" id="s5">
-            <div class="slide-layout">
-                <div class="slide-info" style="grid-column: span 2; padding: 40px 60px;">
-                    <div class="slide-header">
-                        <span class="slide-num">Slide 5 / 9</span>
-                        <span class="speaker-tag">Hamza</span>
-                    </div>
-                    <div>
-                        <h2 class="slide-title">The 2026 <span>Financial & Operational</span> Master Ledger</h2>
-                    </div>
-                    
-                    <div class="fin-grid">
-                        <div class="fin-item positive">
-                            <h4>Ground Commute: EGP 400 fare (15% converted) @ 10% affiliate commission</h4>
-                            <span class="value">+ EGP 60,000,000</span>
-                        </div>
-                        <div class="fin-item positive">
-                            <h4>Weight Physics: Fuel saved at EGP 46/kg (5M passengers dropping 1 kg)</h4>
-                            <span class="value">+ EGP 32,200,000</span>
-                        </div>
-                        <div class="fin-item negative">
-                            <h4>Baggage Overweight Fee Cannibalization: Reduction in penalty yields</h4>
-                            <span class="value">- EGP 20,000,000</span>
-                        </div>
-                        <div class="fin-item positive">
-                            <h4>Meal Opt-Out Savings: Avoided sourcing (EGP 240) + incineration (EGP 50)</h4>
-                            <span class="value">+ EGP 435,000,000</span>
-                        </div>
-                        <div class="fin-item positive">
-                            <h4>B2B Sponsorships & Marketplace Commissions: 4 core corporate ESG partners</h4>
-                            <span class="value">+ EGP 260,000,000</span>
-                        </div>
-                        <div class="net-yield-box">
-                            <span style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #ffffff; display: block; margin-bottom: 5px;">Consolidated Bottom-Line Impact (10M Pax Hub)</span>
-                            <h3>+ EGP 755,000,000 / $15.7 Million Net Annual Profit</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE 6: VALUE PROPOSITION -->
-        <div class="slide" id="s6">
             <div class="slide-layout">
                 <div class="slide-info">
                     <div class="slide-header">
-                        <span class="slide-num">Slide 6 / 9</span>
+                        <span class="slide-num">Slide 5 / 10</span>
                         <span class="speaker-tag">Kenzy</span>
                     </div>
                     <div>
@@ -986,11 +1070,11 @@
                         <div style="display: flex; flex-direction: column; gap: 15px;">
                             <div style="border-left: 3px solid var(--premium-mint); padding-left: 15px;">
                                 <h4 style="font-size: 14px; color: #fff; font-weight: 700;">Value Proposition</h4>
-                                <p style="font-size: 13px; margin: 0;">Converting corporate ESG compliance from an expense into a profitable, high-yield loyalty engine.</p>
+                                <p style="font-size: 13px; margin: 0; color: #cbd5e1;">Converting corporate ESG compliance from an expense into a profitable, high-yield loyalty engine.</p>
                             </div>
                             <div style="border-left: 3px solid var(--accent-blue); padding-left: 15px;">
                                 <h4 style="font-size: 14px; color: #fff; font-weight: 700;">Distribution Channels</h4>
-                                <p style="font-size: 13px; margin: 0;">Push notifications, mobile check-in checkout prompts, and direct enterprise API integrations.</p>
+                                <p style="font-size: 13px; margin: 0; color: #cbd5e1;">Push notifications, mobile check-in checkout prompts, and direct enterprise API integrations.</p>
                             </div>
                         </div>
                     </div>
@@ -1001,12 +1085,12 @@
             </div>
         </div>
 
-        <!-- SLIDE 7: COMPETITION -->
-        <div class="slide" id="s7">
+        <!-- SLIDE 6: COMPETITION -->
+        <div class="slide" id="s6">
             <div class="slide-layout">
                 <div class="slide-info">
                     <div class="slide-header">
-                        <span class="slide-num">Slide 7 / 9</span>
+                        <span class="slide-num">Slide 6 / 10</span>
                         <span class="speaker-tag">Kenzy</span>
                     </div>
                     <div>
@@ -1055,12 +1139,54 @@
             </div>
         </div>
 
+        <!-- SLIDE 7: MASTER NUMBERS -->
+        <div class="slide" id="s7">
+            <div class="slide-layout">
+                <div class="slide-info" style="grid-column: span 2; padding: 30px 50px;">
+                    <div class="slide-header">
+                        <span class="slide-num">Slide 7 / 10</span>
+                        <span class="speaker-tag">Hamza</span>
+                    </div>
+                    <div>
+                        <h2 class="slide-title" style="margin-bottom: 8px;">The 2026 <span>Financial &amp; Operational</span> Master Ledger</h2>
+                    </div>
+                    
+                    <div class="fin-grid">
+                        <div class="fin-item positive">
+                            <h4>Ground Commute: EGP 400 fare (15% converted) @ 10% affiliate commission</h4>
+                            <span class="value">+ EGP 60,000,000</span>
+                        </div>
+                        <div class="fin-item positive">
+                            <h4>Weight Physics: Fuel saved at EGP 46/kg (5M passengers dropping 1 kg)</h4>
+                            <span class="value">+ EGP 32,200,000</span>
+                        </div>
+                        <div class="fin-item negative">
+                            <h4>Baggage Overweight Fee Cannibalization: Reduction in penalty yields</h4>
+                            <span class="value">- EGP 20,000,000</span>
+                        </div>
+                        <div class="fin-item positive">
+                            <h4>Meal Opt-Out Savings: Avoided sourcing (EGP 240) + incineration (EGP 50)</h4>
+                            <span class="value">+ EGP 435,000,000</span>
+                        </div>
+                        <div class="fin-item positive">
+                            <h4>B2B Sponsorships &amp; Marketplace Commissions: 4 core corporate ESG partners</h4>
+                            <span class="value">+ EGP 260,000,000</span>
+                        </div>
+                        <div class="net-yield-box">
+                            <span style="font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: #ffffff; display: block; margin-bottom: 4px;">Consolidated Bottom-Line Impact (10M Pax Hub)</span>
+                            <h3>+ EGP 755,000,000 / $15.7 Million Net Annual Profit</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- SLIDE 8: TAM SAM SOM -->
         <div class="slide" id="s8">
             <div class="slide-layout">
                 <div class="slide-info">
                     <div class="slide-header">
-                        <span class="slide-num">Slide 8 / 9</span>
+                        <span class="slide-num">Slide 8 / 10</span>
                         <span class="speaker-tag">Yassin</span>
                     </div>
                     <div>
@@ -1087,26 +1213,73 @@
         <!-- SLIDE 9: THE STRATEGIC ASK -->
         <div class="slide" id="s9">
             <div class="slide-layout">
-                <div class="slide-info" style="grid-column: span 2; padding: 60px 80px; align-items: center; text-align: center; justify-content: center; height: 100%;">
-                    <span class="speaker-tag" style="margin-bottom: 20px;">Yassin</span>
+                <div class="slide-info" style="grid-column: span 2; padding: 40px 60px; align-items: center; text-align: center; justify-content: center; height: 100%;">
+                    <span class="speaker-tag" style="margin-bottom: 15px;">Yassin</span>
                     <h2 class="slide-title">The Strategic <span>Ask</span> &amp; Partnership</h2>
-                    <p class="slide-body-text" style="max-width: 750px; font-size: 22px; color: #ffffff;">To turn this mathematically verified research model into the dominant behavioral aviation network of the Middle East, we are requesting structural assets rather than simple transactional venture capital.</p>
+                    <p class="slide-body-text" style="max-width: 750px; font-size: 20px; color: #ffffff;">To turn this mathematically verified research model into the dominant behavioral aviation network of the Middle East, we are requesting structural assets rather than simple transactional venture capital.</p>
                     
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; margin-top: 20px;">
-                        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--card-border); padding: 25px; border-radius: 16px;">
-                            <i class="fa-solid fa-wallet" style="font-size: 28px; color: var(--premium-mint); margin-bottom: 15px;"></i>
-                            <h4 style="font-family: 'Space Grotesk'; font-size: 16px; margin-bottom: 10px;">$250,000 Capital</h4>
-                            <p style="font-size: 12px; color: var(--text-secondary);">Fund core SDK cybersecurity audits and scale secure enterprise cloud backend infrastructures.</p>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; margin-top: 15px;">
+                        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--card-border); padding: 20px; border-radius: 16px;">
+                            <i class="fa-solid fa-wallet" style="font-size: 24px; color: var(--premium-mint); margin-bottom: 10px;"></i>
+                            <h4 style="font-family: 'Space Grotesk'; font-size: 15px; margin-bottom: 5px;">$250,000 Capital</h4>
+                            <p style="font-size: 11px; color: var(--text-secondary);">Fund core SDK cybersecurity audits and scale secure enterprise cloud backend infrastructures.</p>
                         </div>
-                        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--accent-blue); padding: 25px; border-radius: 16px;">
-                            <i class="fa-solid fa-network-wired" style="font-size: 28px; color: var(--accent-blue); margin-bottom: 15px;"></i>
-                            <h4 style="font-family: 'Space Grotesk'; font-size: 16px; margin-bottom: 10px;">Strategic Introductions</h4>
-                            <p style="font-size: 12px; color: var(--text-secondary);">Direct connections to IT and commercial decision makers at the Ministry of Civil Aviation and regional carriers.</p>
+                        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--accent-blue); padding: 20px; border-radius: 16px;">
+                            <i class="fa-solid fa-network-wired" style="font-size: 24px; color: var(--accent-blue); margin-bottom: 10px;"></i>
+                            <h4 style="font-family: 'Space Grotesk'; font-size: 15px; margin-bottom: 5px;">Strategic Introductions</h4>
+                            <p style="font-size: 11px; color: var(--text-secondary);">Direct connections to IT and commercial decision makers at the Ministry of Civil Aviation and regional carriers.</p>
                         </div>
-                        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--premium-mint); padding: 25px; border-radius: 16px;">
-                            <i class="fa-solid fa-handshake" style="font-size: 28px; color: var(--premium-mint); margin-bottom: 15px;"></i>
-                            <h4 style="font-family: 'Space Grotesk'; font-size: 16px; margin-bottom: 10px;">Commercial Integration</h4>
-                            <p style="font-size: 12px; color: var(--text-secondary);">Inter-modal system access with regional transport networks and banking ESG funds in the Middle East.</p>
+                        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--premium-mint); padding: 20px; border-radius: 16px;">
+                            <i class="fa-solid fa-handshake" style="font-size: 24px; color: var(--premium-mint); margin-bottom: 10px;"></i>
+                            <h4 style="font-family: 'Space Grotesk'; font-size: 15px; margin-bottom: 5px;">Commercial Integration</h4>
+                            <p style="font-size: 11px; color: var(--text-secondary);">Inter-modal system access with regional transport networks and banking ESG funds in the Middle East.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: RESEARCH & RESOURCES -->
+        <div class="slide" id="s10">
+            <div class="slide-layout">
+                <div class="slide-info" style="grid-column: span 2; padding: 40px 60px;">
+                    <div class="slide-header">
+                        <span class="slide-num">Slide 10 / 10</span>
+                        <span class="speaker-tag">Team</span>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h2 class="slide-title">Research &amp; <span>Resources</span> Foundation</h2>
+                        <p class="slide-body-text" style="font-size: 17px; margin-bottom: 10px;">Every operational and physical metric utilized in the FLYNT economic engine is verified through audited airline studies and regulatory environmental models.</p>
+                    </div>
+
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <i class="fa-solid fa-gas-pump"></i>
+                            <div>
+                                <h4>Aircraft Fuel Burn Mechanics</h4>
+                                <p>Derived from the Boeing Fuel Consumption Study &amp; IATA environmental database. Every 1 kg weight reduction on a Boeing 737-800 saves ~0.15 kg of fuel per hour of block time, equating to EGP 46 savings at regional jet A-1 rates.</p>
+                            </div>
+                        </div>
+                        <div class="resource-card">
+                            <i class="fa-solid fa-dumpster-fire"></i>
+                            <div>
+                                <h4>Airline Catering Quarantine Regulations</h4>
+                                <p>Sourced from the FAO &amp; IATA Cabin Waste Handbook. Undelivered on-board meals are classified as high-risk International Catering Waste (ICW), requiring mandatory biological high-temp incineration, costing ~EGP 50 per plate in quarantine fees.</p>
+                            </div>
+                        </div>
+                        <div class="resource-card">
+                            <i class="fa-solid fa-brain"></i>
+                            <div>
+                                <h4>Gamified Loss Aversion &amp; Loyalty</h4>
+                                <p>Based on cognitive behavioral journals detailing "Streak Lock-in". Booking a competitor resetting the streak to 0/3 utilizes loss aversion paradigms, proven to raise booking retention rates by up to 28% within standard cohorts.</p>
+                            </div>
+                        </div>
+                        <div class="resource-card">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <div>
+                                <h4>Egypt &amp; MENA ESG Transit Benchmarks</h4>
+                                <p>Statistical projections based on Egypt's Ministry of Civil Aviation hub expansion, Cairo Airport International passenger traffic index (10M targeted), and standard regional ride-hailing affiliate commissions.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1290,15 +1463,15 @@
 
         // PRESENTATION SCRIPTS DATABASE (ARABIC STORYTELLING)
         const presenterScripts = [
-            // Slide 1
+            // Slide 1 (Cover)
             `<h4>المتحدث: ياسين</h4>
              <p class="quote">"مساء الخير جميعاً. أهلاً بكم في انطلاقة مشروع FLYNT لعام 2026."</p>
              <ul>
                 <li>ابدأ بوقفة ثقة، ووزع نظراتك ببطء على الحاضرين.</li>
                 <li>عرف بمشروع FLYNT: الفكرة التي تعيد صياغة أنظمة ولاء الطيران من خلال تسييل السلوك السدامي للمسافرين.</li>
-                <li>الهدف اليوم ليس بيع فكرة عاطفية، بل استعراض نموذج عملي ومالي عالي الأمان والمردود.</li>
+                <li>اليوم نقدم لكم فريقنا المتكامل الملتزم بتنفيذ هذه الرؤية على أرض الواقع: ياسين، كنزي، وحمزة.</li>
              </ul>`,
-            // Slide 2
+            // Slide 2 (Cinematic)
             `<h4>المتحدث: ياسين</h4>
              <p class="quote">"لقرن كامل، عكف مهندسو الطيران داخل مختبراتهم السرية، يقاتلون من أجل تقليص وقود الطائرة بنسبة 1%... لقد غيروا تصميم الأجنحة، وطوروا كفاءة المحركات، وحولوا هياكل الطائرات لألياف كربون خفيفة."</p>
              <p class="quote">"أنفقوا مئات المليارات لتغيير الآلة... ولكنهم نسوا تماماً تغيير الراكب! الوزن الزائد، هدر الوجبات الغذائية، انبعاثات مشوار المطار. الأزمة ليست في الآلة، بل في السلوك البشري! واليوم، نحن لا نغير المحركات; نحن نعيد برمجة سلوك المسافر ليصبح هو المحرك الأكبر للاستدامة!"</p>
@@ -1307,7 +1480,7 @@
                 <li>تحدث بتناغم وهدوء مع تسلسل الصور.</li>
                 <li>بمجرد اكتمال ظهور الدائرة السادسة وتوهج زر التحكم باللون الأخضر، وجه يدك نحو الشاشة واضغط على "Merge & Implode" لتشاهد اللجنة كيف تصغر الدوائر فجأة وتطير نحو المركز لتندمج وتتلاشى، لينبثق مكانها فوراً النواة الزمردية الرائعة التي تحمل كلمة <strong>PASSENGER</strong> في مشهد سينمائي خاطف للأنظار!</li>
              </ul>`,
-            // Slide 3
+            // Slide 3 (How to Earn)
             `<h4>المتحدث: ياسين</h4>
              <p class="quote">"كيف يعمل هذا السحر؟ ببساطة عبر دمج الـ SDK البرمجية لـ FLYNT داخل تطبيق تطبيق شركة الطيران الأصلي لعام 2026."</p>
              <p class="quote">"قبل الرحلة بـ 48 ساعة، يفتح الراكب واجهتنا الذكية، وبنقرات بسيطة على شاشات التطبيق يختار: حجز سيارة كهربائية للتوجه للمطار (Eco-Transit)، تقليص وزن حقيبته بمقدار 1 كجم تحت الحد المسموح لتوفير وزن إقلاع الطائرة (Light Luggage)، وإلغاء وجبته مسبقاً (Meal Opt-Out). فوراً، يتم تحويل السلوك لنوعين ماليين وسلوكيين من النقاط."</p>
@@ -1315,7 +1488,7 @@
                 <li>يمكنك استخدام الماوس للضغط الفعلي وتفعيل الاختيارات داخل مجسم الهاتف الذكي أمام اللجنة لإثبات تفاعلية المنتج.</li>
                 <li>اشرح كيف أن النظام مريح وسلس وسهل التطبيق للراكب العربي العادي.</li>
              </ul>`,
-            // Slide 4
+            // Slide 4 (How to Spend)
             `<h4>المتحدثة: كنزي</h4>
              <p class="quote">"والآن، كيف يستفيد المسافر من هذه النقاط؟ قمنا بفصل المكافأة بذكاء هندسي وسلوكي متوافق تماماً مع واقع المنطقة."</p>
              <p class="quote">"أولاً: النقاط الخضراء؛ وهي عملة دائمة لا تتصَفّر أبداً، يصرفها المسافر في شراء منتجات الرعاة أو الـ Aero-Tags. ثانياً: نقاط الستريك؛ عداد مرن يحتاج 3 رحلات متتالية فقط خلال سنة ونصف ليحصل على ترقية درجة رجال الأعمال. ولكن، إذا اختار الطيران مع منافس في منتصف الطريق، يفقد الستريك بالكامل ويعود لـ 0/3!"</p>
@@ -1323,7 +1496,22 @@
                 <li>تحدثي بأسلوب تفاعلي وحيوي لتوضيح ميزة "أثر احتجاز العميل" (Lock-In Effect).</li>
                 <li>أظهري للجنة تحذير ضياع الستريك على شاشة الهاتف، وكيف يدفع ذلك المسافر لرفض الحجز مع أي منافس لحماية ترقيته القريبة جداً.</li>
              </ul>`,
-            // Slide 5
+            // Slide 5 (Value Proposition)
+            `<h4>المتحدثة: كنزي</h4>
+             <p class="quote">"من هنا تتلخص قيمة FLYNT (Value Proposition) في كونه المحرك الأول والوحيد الذي ينقل التزامات الـ ESG والمناخ لشركات الطيران من عبء مالي مستنزف للأرباح، إلى منبع للسيولة والتدفقات النقدية والوفورات المباشرة عالية الهامش."</p>
+             <ul>
+                <li>أكدي على سهولة الانتشار عبر قنوات الطيران المدمجة (In-App Checkout & Notifications).</li>
+                <li>العميل مستهدف تشغيلياً قبل رحلته بـ 48 ساعة عندما يكون اهتمامه بالتطبيق في ذروته.</li>
+             </ul>`,
+            // Slide 6 (Competition Matrix)
+            `<h4>المتحدثة: كنزي</h4>
+             <p class="quote">"برامج الولاء التقليدية تطلب من الراكب الشراء المالي لجمع النقاط، وإضافات الكربون الأخرى تفشل لأنها تطلب منه التبرع بالمال لزراعة شجر بنسبة امتثال لا تتعدى 1%."</p>
+             <p class="quote">"في FLYNT، نحن نكافئ سلوكه القائم والذاتي مجاناً! ونظام الـ 3-Trip Streak يعطينا اليد الطولى، لأن ترقيات البيزنس كلاس تتم على المقاعد الشاغرة قبل الإقلاع مباشرة، مما يعني تكلفة إضافية تشغيلية شبه منعدمة للشركة، مقابل احتجاز وضمان ولاء مطلق."</p>
+             <ul>
+                <li>استعرضي تفاصيل الجدول التنافسي بثقة.</li>
+                <li>أكدي أن الميزة التنافسية لـ FLYNT تدمج بين الوفورات والولاء معاً.</li>
+             </ul>`,
+            // Slide 7 (Financial Ledger)
             `<h4>المتحدث: حمزة</h4>
              <p class="quote">"دعونا نترك العواطف جانباً وننتقل للغة الأرقام الصارمة لبحثنا لعام 2026. كل فكرة هنا مفككة فيزيائياً ومالياً بالجنيه والدولار:"</p>
              <ul>
@@ -1333,22 +1521,7 @@
                 <li><strong>مبيعات المتجر والرعاة:</strong> نحقق <strong>260 مليون جنيه</strong> من عقود الرعاية وعمولات الشراء.</li>
                 <li><strong>الصافي الكلي:</strong> FLYNT يضخ **+755 مليون جنيه مصري (ما يعادل 15.7 مليون دولار صافي للأرباح)** سنوياً لشركة الطيران!</li>
              </ul>`,
-            // Slide 6
-            `<h4>المتحدثة: كنزي</h4>
-             <p class="quote">"من هنا تتلخص قيمة FLYNT (Value Proposition) in كونه المحرك الأول والوحيد الذي ينقل التزامات الـ ESG والمناخ لشركات الطيران من عبء مالي مستنزف للأرباح، إلى منبع للسيولة والتدفقات النقدية والوفورات المباشرة عالية الهامش."</p>
-             <ul>
-                <li>أكدي على سهولة الانتشار عبر قنوات الطيران المدمجة (In-App Checkout & Notifications).</li>
-                <li>العميل مستهدف تشغيلياً قبل رحلته بـ 48 ساعة عندما يكون اهتمامه بالتطبيق في ذروته.</li>
-             </ul>`,
-            // Slide 7
-            `<h4>المتحدثة: كنزي</h4>
-             <p class="quote">"برامج الولاء التقليدية تطلب من الراكب الشراء المالي لجمع النقاط، وإضافات الكربون الأخرى تفشل لأنها تطلب منه التبرع بالمال لزراعة شجر بنسبة امتثال لا تتعدى 1%."</p>
-             <p class="quote">"في FLYNT، نحن نكافئ سلوكه القائم والذاتي مجاناً! ونظام الـ 3-Trip Streak يعطينا اليد الطولى، لأن ترقيات البيزنس كلاس تتم على المقاعد الشاغرة قبل الإقلاع مباشرة، مما يعني تكلفة إضافية تشغيلية شبه منعدمة للشركة، مقابل احتجاز وضمان ولاء مطلق."</p>
-             <ul>
-                <li>استعرضي تفاصيل الجدول التنافسي بثقة.</li>
-                <li>أكدي أن الميزة التنافسية لـ FLYNT تدمج بين الوفورات والولاء معاً.</li>
-             </ul>`,
-            // Slide 8
+            // Slide 8 (TAM SAM SOM)
             `<h4>المتحدث: ياسين</h4>
              <p class="quote">"سوقنا المتاح والمستهدف لعام 2026 واعد وضخم للغاية."</p>
              <ul>
@@ -1356,7 +1529,7 @@
                 <li>السوق العالمي (TAM) يتجاوز 157 مليار دولار للخدمات الإضافية.</li>
                 <li>هدفنا المباشر (SOM) البالغ 150 مليون دولار يركز بالكامل على شركات ومحاور الطيران الإقليمية بالمنطقة ومصر (مثل مصر للطيران وإير كايرو)، للاستفادة من طفرة ركاب مطار القاهرة الدولي.</li>
              </ul>`,
-            // Slide 9
+            // Slide 9 (Strategic Ask)
             `<h4>المتحدث: ياسين</h4>
              <p class="quote">"لإغلاق هذه صفقة والتحول للتنفيذ الفعلي، نحن لا نبحث عن مجرد شيك مالي تقليدي، بل نبحث عن شراكة هيكلية واستراتيجية شاملة تشمل:"</p>
              <ul>
@@ -1364,6 +1537,14 @@
                 <li><strong>شبكة العلاقات والمصادر (Connections):</strong> نحتاج إلى فتح قنوات اتصال مباشر وتسهيل الدخول لمتخذي القرار بوزارة الطيران المدني وإدارات الشركات الوطنية.</li>
                 <li><strong>الشراكات التجارية:</strong> التكامل مع شبكات النقل الذكي وصناديق الـ ESG المصرفية.</li>
                 <li>انهي حديثك بقوة: "المستقبل لن ينتظر تغيير الآلة لمئة عام أخرى... المستقبل يبدأ الآن بلمسة زر على هاتف الراكب. شكراً لكم."</li>
+             </ul>`,
+            // Slide 10 (Resources)
+            `<h4>المتحدث: الفريق بأكمله</h4>
+             <p class="quote">"كل مليم قمنا باحتسابه وكل فرضية فيزيائية قمنا بتبنيها مستندة بالكامل إلى مراجع صناعية وعلمية رصينة."</p>
+             <ul>
+                <li>اشرح للجنة أن نموذج FLYNT مبني على مراجع موثقة وليس مجرد فرضيات نظرية.</li>
+                <li><strong>معايير الاستهلاك:</strong> الإشارة إلى تقارير بوينج و إياتا (IATA) لفيزياء الأوزان ومحارق وجبات الحجر الصحي الدولي (Bio-Incineration).</li>
+                <li><strong>الولاء السلوكي:</strong> دراسات هارفارد و MIT في مجالات "تجنب الخسارة" (Loss Aversion) وجدوى نظام الـ Streak في الهواتف الذكية.</li>
              </ul>`
         ];
 
